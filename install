@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Check to see if Homebrew is already installed, and install if not
+if test ! $(which brew); then
+  echo "Installing Homebrew..."
+
+  if test "$(uname)" = "Darwin"
+  then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew bundle
+  elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
+  then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  fi
+else
+  echo "Homebrew is already installed"
+fi
+
+# Copy .bashrc
+cp -i .bashrc ~/.bashrc
+
+exit 0
