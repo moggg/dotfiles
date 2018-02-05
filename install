@@ -19,4 +19,8 @@ fi
 # Copy .bashrc
 cp -i .bashrc ~/.bashrc
 
+# Set git up
+git config --global user.username moggg
+git config --global user.email mog@moop.net.au
+
 exit 0
