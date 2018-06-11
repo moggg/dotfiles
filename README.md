@@ -1,12 +1,9 @@
 # dotfiles
-This is my simple dotfiles setup, used primarily in OS X.
+This is my simple dotfiles setup for MacOS
 
+**install:** Installs homebrew, oh-my-zsh and sets basic GitHub config
 
-**install:** Checks to see if homebrew is installed, installs it if it's not and then moves .bashrc
-
-**.bashrc:** Sets the bash prompt and binds a few aliases
-
-**Brewfile:** List of programs for homebrew to install
+**Brewfile:** List of programs for brew to install
 
 ### Installing
 ```

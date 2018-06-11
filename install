@@ -1,26 +1,19 @@
-#!/bin/sh
+#!/bin/bash
 
-# Check to see if Homebrew is already installed, and install if not
-if test ! $(which brew); then
-  echo "Installing Homebrew..."
+# Install homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-  if test "$(uname)" = "Darwin"
-  then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew bundle
-  elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
-  then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-  fi
-else
-  echo "Homebrew is already installed"
-fi
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# Copy .bashrc
-cp -i .bashrc ~/.bashrc
+# Install programs from Brewfile
+brew tap Homebrew/bundle
+brew bundle --verbose
 
 # Set git up
 git config --global user.username moggg
 git config --global user.email mog@moop.net.au
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 exit 0
