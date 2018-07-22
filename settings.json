@@ -1,0 +1,7 @@
+{
+    "workbench.colorTheme": "Dracula",
+    "telemetry.enableTelemetry": false,
+    "editor.cursorBlinking": "solid",
+    "workbench.startupEditor": "none",
+    "window.restoreFullscreen": true
+}
