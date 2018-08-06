@@ -56,7 +56,11 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  aws
+	docker
+	git
+	httpie
+	tmux
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
@@ -89,5 +93,12 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+
+transfer() {
+    curl --progress-bar --upload-file $1 https://transfer.sh/$(basename $1) | tee /dev/null;
+}
+
 alias ll="ls -lah"
 alias wget='wget --no-hsts'
+alias transfer=transfer
+alias ssh-tunnel='ssh -D 127.0.0.1:1080 -f -q -C -N mog@vpn -i ~/.ssh/mog.ssh.pem'
