@@ -57,9 +57,11 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   aws
+  brew
 	docker
 	git
 	httpie
+  osx
 	tmux
   zsh-autosuggestions
   zsh-syntax-highlighting
