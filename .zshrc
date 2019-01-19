@@ -1,10 +1,15 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/mog/.oh-my-zsh
 
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
+export GOPATH=$HOME/go
+export NPMPATH=$HOME/.npm-global/bin
+export PATH=$PATH:$GOPATH:$NPMPATH
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="spaceship"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -60,14 +65,13 @@ plugins=(
   brew
 	docker
 	git
-	httpie
   osx
 	tmux
-  zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
